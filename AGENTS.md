@@ -20,6 +20,7 @@ This repository enforces deterministic, production-grade engineering practices. 
 |---|---|---|
 | `framework` | **Next.js App Router** | Enforces App Router, Server Components by default, leaf-node "use client", Zod-validated Server Actions, and pnpm. |
 | `styling` | **Tailwind CSS v4** | Mobile-first breakpoints, semantic CSS tokens, zero arbitrary magic pixel values, and primitive composition. |
+| `design-pointer` | **Hallmark / PinUI Pointer** | External design pointer: generates SETUP.md bootstrap instructions and scoped component circuit-breaker rule. |
 
 ---
 
@@ -36,12 +37,15 @@ project-root/
 │       └── base.mdc               # [SHIM] Cursor-native rule pointing to ./AGENTS.md
 ├── .github/
 │   └── copilot-instructions.md    # [SHIM] Copilot rule pointing to ./AGENTS.md
+├── SETUP.md                       # [BOOTSTRAP] CLI commands for external tools
 ├── public/
 ├── src/
-│   └── app/
-│       ├── globals.css            # Tailwind CSS styling tokens
-│       ├── layout.tsx             # Root layout (Server Component)
-│       └── page.tsx               # Root page (Server Component)
+│   ├── app/
+│   │   ├── globals.css            # Tailwind CSS styling tokens
+│   │   ├── layout.tsx             # Root layout (Server Component)
+│   │   └── page.tsx               # Root page (Server Component)
+│   └── components/
+│       └── AGENTS.md              # [SCOPED] UI component rules & circuit-breaker
 ├── package.json
 └── tsconfig.json
 ```
@@ -151,3 +155,10 @@ project-root/
   }
   ```
 - Keep component markup readable and cleanly split complex conditional styles.
+
+---
+
+## 3. Scoped UI Component Rules & External Tool Pointers
+
+- **UI Component Scoped Rules**: Before modifying or creating components in `src/components/`, agents MUST obey the scoped rules in [`src/components/AGENTS.md`](./src/components/AGENTS.md).
+- **Design Skill Contract**: Agents must verify that the `hallmark` skill is installed and available before generating UI code. If missing, follow the bootstrap instructions in [`SETUP.md`](./SETUP.md).

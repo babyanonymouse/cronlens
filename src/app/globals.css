@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e2e8f0;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #0284c7;
+
+  /* Semantic Cron Field Colors */
+  --field-minute: #0891b2;
+  --field-minute-bg: #ecfeff;
+  --field-hour: #7c3aed;
+  --field-hour-bg: #f5f3ff;
+  --field-dom: #059669;
+  --field-dom-bg: #ecfdf5;
+  --field-month: #d97706;
+  --field-month-bg: #fffbeb;
+  --field-dow: #db2777;
+  --field-dow-bg: #fdf2f8;
+}
+
+.dark {
+  --background: #090d16;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  --primary: #38bdf8;
+  --primary-foreground: #090d16;
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #f87171;
+  --destructive-foreground: #090d16;
+  --success: #34d399;
+  --success-foreground: #090d16;
+  --warning: #fbbf24;
+  --warning-foreground: #090d16;
+  --border: #1e293b;
+  --input: #334155;
+  --ring: #38bdf8;
+
+  /* Semantic Cron Field Colors in Dark Mode */
+  --field-minute: #22d3ee;
+  --field-minute-bg: #083344;
+  --field-hour: #a78bfa;
+  --field-hour-bg: #2e1065;
+  --field-dom: #34d399;
+  --field-dom-bg: #064e3b;
+  --field-month: #fbbf24;
+  --field-month-bg: #451a03;
+  --field-dow: #f472b6;
+  --field-dow-bg: #500724;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-field-minute: var(--field-minute);
+  --color-field-minute-bg: var(--field-minute-bg);
+  --color-field-hour: var(--field-hour);
+  --color-field-hour-bg: var(--field-hour-bg);
+  --color-field-dom: var(--field-dom);
+  --color-field-dom-bg: var(--field-dom-bg);
+  --color-field-month: var(--field-month);
+  --color-field-month-bg: var(--field-month-bg);
+  --color-field-dow: var(--field-dow);
+  --color-field-dow-bg: var(--field-dow-bg);
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
