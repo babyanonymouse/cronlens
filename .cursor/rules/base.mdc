@@ -1,0 +1,10 @@
+---
+description: Core project rules and architectural guidelines
+globs: *
+alwaysApply: true
+---
+
+# Cursor Rules - Base Architecture
+
+Read and strictly obey the unified project rules defined in `./AGENTS.md`.
+Refer to [AGENTS.md](../../AGENTS.md) as the single source of truth for code style, framework conventions, and verification steps.
