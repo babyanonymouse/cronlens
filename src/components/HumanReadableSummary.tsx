@@ -37,7 +37,7 @@ export function HumanReadableSummary({
       {/* Primary Human Explanation Card */}
       <div
         className={cn(
-          'relative rounded-2xl border p-4 sm:p-5 transition-all duration-200',
+          'relative rounded-xl border p-4 sm:p-5 transition-colors duration-200',
           validation.isValid
             ? 'bg-card border-border shadow-xs'
             : 'bg-destructive/10 border-destructive/40 shadow-xs'
@@ -48,8 +48,8 @@ export function HumanReadableSummary({
             <span className="p-1 rounded-md bg-primary/10 text-primary">
               <Sparkles className="w-4 h-4" />
             </span>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Human-Readable Translation
+            <h2 className="text-xs font-semibold text-muted-foreground">
+              In plain language
             </h2>
           </div>
 
@@ -63,7 +63,7 @@ export function HumanReadableSummary({
               {copied ? (
                 <>
                   <Check className="w-3.5 h-3.5 text-success" />
-                  <span className="text-success font-medium">Copied Translation</span>
+                  <span className="text-success font-medium whitespace-nowrap">Copied</span>
                 </>
               ) : (
                 <>
@@ -138,7 +138,7 @@ export function HumanReadableSummary({
                     className="flex flex-col items-start p-2.5 rounded-xl bg-secondary/50 hover:bg-secondary border border-border/60 transition-colors text-left cursor-pointer"
                   >
                     <div className="flex items-center justify-between w-full mb-1">
-                      <span className="text-xs font-semibold uppercase text-muted-foreground">
+                      <span className="text-xs font-semibold text-muted-foreground">
                         {meta.label}
                       </span>
                       <span className={cn('font-mono text-xs font-bold', meta.textClass)}>

@@ -1,79 +1,44 @@
+/* Hallmark · v2.0.0 · theme: technical workbench · genre: modern-minimal · material: product · job: inspect cron schedules · signature: live expression editor · surface: absolute */
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 · weakest: E, the existing controls need a quieter surface hierarchy */
+/* Hallmark · answered F3 · the editor is the product capture and remains visible without scripting */
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #0284c7;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #e2e8f0;
-  --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --success: #10b981;
-  --success-foreground: #ffffff;
-  --warning: #f59e0b;
-  --warning-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #cbd5e1;
-  --ring: #0284c7;
+  --background: #08111f;
+  --foreground: #e5eef7;
+  --card: #0d1a2a;
+  --card-foreground: #e5eef7;
+  --popover: #102238;
+  --popover-foreground: #e5eef7;
+  --primary: #36d1dc;
+  --primary-foreground: #062027;
+  --secondary: #102238;
+  --secondary-foreground: #d7e7f2;
+  --muted: #0b1726;
+  --muted-foreground: #8da5b8;
+  --accent: #16344a;
+  --accent-foreground: #e5eef7;
+  --destructive: #fb7185;
+  --destructive-foreground: #2a0a13;
+  --success: #4ade80;
+  --success-foreground: #062014;
+  --warning: #f5b84b;
+  --warning-foreground: #211507;
+  --border: #1d3850;
+  --input: #28475d;
+  --ring: #36d1dc;
 
   /* Semantic Cron Field Colors */
-  --field-minute: #0891b2;
-  --field-minute-bg: #ecfeff;
-  --field-hour: #7c3aed;
-  --field-hour-bg: #f5f3ff;
-  --field-dom: #059669;
-  --field-dom-bg: #ecfdf5;
-  --field-month: #d97706;
-  --field-month-bg: #fffbeb;
-  --field-dow: #db2777;
-  --field-dow-bg: #fdf2f8;
-}
-
-.dark {
-  --background: #090d16;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  --primary: #38bdf8;
-  --primary-foreground: #090d16;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #334155;
-  --accent-foreground: #f8fafc;
-  --destructive: #f87171;
-  --destructive-foreground: #090d16;
-  --success: #34d399;
-  --success-foreground: #090d16;
-  --warning: #fbbf24;
-  --warning-foreground: #090d16;
-  --border: #1e293b;
-  --input: #334155;
-  --ring: #38bdf8;
-
-  /* Semantic Cron Field Colors in Dark Mode */
-  --field-minute: #22d3ee;
-  --field-minute-bg: #083344;
-  --field-hour: #a78bfa;
-  --field-hour-bg: #2e1065;
-  --field-dom: #34d399;
-  --field-dom-bg: #064e3b;
-  --field-month: #fbbf24;
-  --field-month-bg: #451a03;
-  --field-dow: #f472b6;
-  --field-dow-bg: #500724;
+  --field-minute: #55d6e8;
+  --field-minute-bg: #0b3340;
+  --field-hour: #b2a1ff;
+  --field-hour-bg: #2b2350;
+  --field-dom: #63e6a3;
+  --field-dom-bg: #0c3a2c;
+  --field-month: #f6c667;
+  --field-month-bg: #463412;
+  --field-dow: #f58bb7;
+  --field-dow-bg: #481c35;
 }
 
 @theme inline {
@@ -120,4 +85,47 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
+  background: var(--background);
+  scrollbar-color: var(--border) var(--background);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:where(button, input, select, a):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+:where(button, input, select):active {
+  opacity: 0.82;
+}
+
+:where(button, input, select):disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 28%, var(--background));
+  color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

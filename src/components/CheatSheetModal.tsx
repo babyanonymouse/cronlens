@@ -29,9 +29,9 @@ export function CheatSheetModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-background/90 animate-fade-in">
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-2xl text-foreground"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-none text-foreground"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -62,7 +62,7 @@ export function CheatSheetModal({
         <div className="mt-4 space-y-5 text-sm">
           {/* Format Overview */}
           <div className="space-y-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+            <h4 className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5">
               <Terminal className="w-3.5 h-3.5 text-primary" />
               Standard 5-Field Position Format
             </h4>
@@ -80,7 +80,7 @@ export function CheatSheetModal({
 
           {/* Special Characters */}
           <div className="space-y-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <h4 className="text-xs font-semibold text-muted-foreground">
               Special Characters
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -113,7 +113,7 @@ export function CheatSheetModal({
 
           {/* Common Useful Patterns */}
           <div className="space-y-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+            <h4 className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-warning" />
               Common Production Patterns (Click to Load)
             </h4>

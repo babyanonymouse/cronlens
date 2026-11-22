@@ -77,8 +77,8 @@ export function NextExecutionsList({ expression }: NextExecutionsListProps): Rea
             <Calendar className="w-4 h-4" />
           </span>
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Next 5 Execution Timestamps
+            <h2 className="text-xs font-semibold text-muted-foreground">
+              Next five execution times
             </h2>
           </div>
         </div>
@@ -93,7 +93,7 @@ export function NextExecutionsList({ expression }: NextExecutionsListProps): Rea
               className="bg-transparent text-foreground text-xs font-medium focus:outline-none cursor-pointer"
             >
               {COMMON_TIMEZONES.map((tz) => (
-                <option key={tz.value} value={tz.value} className="bg-card text-foreground">
+                <option key={tz.value} value={tz.value} className="bg-secondary text-foreground">
                   {tz.label}
                 </option>
               ))}
@@ -127,7 +127,7 @@ export function NextExecutionsList({ expression }: NextExecutionsListProps): Rea
       {!isClient ? (
         <div className="p-6 rounded-xl bg-secondary/30 border border-dashed border-border text-center text-xs text-muted-foreground animate-pulse">
           <Clock className="w-6 h-6 mx-auto mb-2 opacity-50" />
-          <p className="font-medium text-foreground">Calculating next run timestamps...</p>
+          <p className="font-medium text-foreground">Calculating next run timestamps…</p>
         </div>
       ) : !result.success ? (
         <div className="p-6 rounded-xl bg-secondary/30 border border-dashed border-border text-center text-xs text-muted-foreground">
@@ -141,7 +141,7 @@ export function NextExecutionsList({ expression }: NextExecutionsListProps): Rea
             <div
               key={run.index}
               className={cn(
-                'group relative flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl border transition-all duration-150 gap-2',
+                'group relative flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl border transition-colors duration-150 gap-2',
                 run.index === 1
                   ? 'bg-primary/5 border-primary/30 ring-1 ring-primary/10 shadow-xs'
                   : 'bg-secondary/30 border-border/60 hover:bg-secondary/60 hover:border-border'
@@ -170,8 +170,8 @@ export function NextExecutionsList({ expression }: NextExecutionsListProps): Rea
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                    <span>UTC: {run.utcString}</span>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span>UTC: <code className="font-mono">{run.utcString}</code></span>
                   </div>
                 </div>
               </div>

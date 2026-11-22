@@ -95,8 +95,8 @@ export function SegmentedFieldControls({
           <span className="p-1 rounded-md bg-primary/10 text-primary">
             <Sliders className="w-4 h-4" />
           </span>
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Segmented Field Controls
+          <h2 className="text-xs font-semibold text-muted-foreground">
+            Field controls
           </h2>
         </div>
         <div className="text-xs text-muted-foreground">
@@ -121,14 +121,14 @@ export function SegmentedFieldControls({
                 setCustomInput(validation.parts[field.index] || '*');
               }}
               className={cn(
-                'flex-1 min-w-[70px] sm:min-w-[100px] py-2 px-2.5 rounded-xl border text-center transition-all duration-150 cursor-pointer',
+                'flex-1 min-w-[70px] sm:min-w-[100px] py-2 px-2.5 rounded-xl border text-center transition-colors duration-150 cursor-pointer',
                 isSelected
                   ? 'bg-accent border-primary ring-2 ring-primary/20 font-semibold'
                   : 'bg-secondary/40 border-border/60 hover:bg-secondary text-muted-foreground hover:text-foreground',
                 hasError && 'border-destructive bg-destructive/10 text-destructive'
               )}
             >
-              <div className="text-xs uppercase tracking-wider font-semibold opacity-80">
+              <div className="text-xs font-semibold opacity-80">
                 {field.label}
               </div>
               <div className={cn('font-mono text-sm font-bold truncate mt-0.5', field.textClass)}>
@@ -191,7 +191,7 @@ export function SegmentedFieldControls({
                     type="button"
                     onClick={() => onUpdateField(activeField, option.value)}
                     className={cn(
-                      'flex items-center justify-between p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer',
+                      'flex items-center justify-between p-2.5 rounded-xl border text-xs text-left transition-colors cursor-pointer',
                       isSelected
                         ? 'border-primary bg-primary/10 text-primary font-semibold shadow-xs'
                         : 'border-border/60 bg-secondary/30 hover:bg-secondary text-foreground'
@@ -239,13 +239,13 @@ export function SegmentedFieldControls({
                       type="button"
                       onClick={() => toggleSpecificValue(day.num)}
                       className={cn(
-                        'flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all cursor-pointer',
+                        'flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-colors cursor-pointer',
                         isSelected
                           ? 'border-primary bg-primary text-primary-foreground font-bold shadow-xs'
                           : 'border-border bg-secondary/40 hover:bg-secondary text-foreground'
                       )}
                     >
-                      <span className="text-xs uppercase font-bold">{day.label}</span>
+                      <span className="text-xs font-bold">{day.label}</span>
                       <span className="text-xs opacity-70 font-mono mt-0.5">{day.num}</span>
                     </button>
                   );
@@ -265,7 +265,7 @@ export function SegmentedFieldControls({
                       type="button"
                       onClick={() => toggleSpecificValue(monthNum)}
                       className={cn(
-                        'flex items-center justify-between p-2.5 rounded-xl border text-xs transition-all cursor-pointer',
+                        'flex items-center justify-between p-2.5 rounded-xl border text-xs transition-colors cursor-pointer',
                         isSelected
                           ? 'border-primary bg-primary text-primary-foreground font-bold shadow-xs'
                           : 'border-border bg-secondary/40 hover:bg-secondary text-foreground'
@@ -291,7 +291,7 @@ export function SegmentedFieldControls({
                       type="button"
                       onClick={() => toggleSpecificValue(num)}
                       className={cn(
-                        'py-1.5 rounded-lg font-mono text-xs font-medium transition-all text-center cursor-pointer border',
+                        'py-1.5 rounded-lg font-mono text-xs font-medium transition-colors text-center cursor-pointer border',
                         isSelected
                           ? 'border-primary bg-primary text-primary-foreground font-bold shadow-xs'
                           : 'border-transparent bg-card/60 hover:bg-secondary hover:border-border text-foreground'

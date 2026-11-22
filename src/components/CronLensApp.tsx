@@ -96,9 +96,18 @@ export function CronLensApp(): React.JSX.Element {
     <div className="flex flex-col min-h-screen">
       <Header onOpenCheatSheet={() => setIsCheatSheetOpen(true)} />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
         {/* Core Feature 1: Bidirectional Cron Editor (Monospace Input + Segment Badges) */}
-        <section aria-label="Cron Expression Input">
+        <section aria-label="Cron Expression Input" className="grid gap-3 lg:grid-cols-[minmax(0,1.3fr)_minmax(18rem,0.7fr)] lg:items-end">
+          <div className="space-y-3">
+            <p className="text-sm text-primary font-medium">Schedule workbench</p>
+            <h1 className="max-w-3xl text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
+              Make every cron run legible.
+            </h1>
+            <p className="max-w-xl text-base text-muted-foreground">
+              Write the expression, inspect each field, and see the next five runs before you ship it.
+            </p>
+          </div>
           <CronInputBar
             expression={expression}
             onChange={handleExpressionChange}
@@ -155,11 +164,11 @@ export function CronLensApp(): React.JSX.Element {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-6 mt-12 bg-card/40 text-xs text-muted-foreground">
+      <footer className="border-t border-border py-6 mt-12 bg-muted text-xs text-muted-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="font-mono font-bold text-foreground">CronLens</span>
-            <span>—</span>
+            <span className="font-bold text-foreground">CronLens</span>
+            <span>from</span>
             <span>Developer-focused Cron Expression Builder & Debugger</span>
           </div>
           <div className="flex items-center gap-4">

@@ -77,8 +77,8 @@ export function QuickCopyDropdown({
           <span className="p-1 rounded-md bg-primary/10 text-primary">
             <Copy className="w-4 h-4" />
           </span>
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Developer Export & Copy Actions
+          <h2 className="text-xs font-semibold text-muted-foreground">
+            Export and copy
           </h2>
         </div>
         <span className="text-xs text-muted-foreground hidden sm:inline">
@@ -97,7 +97,7 @@ export function QuickCopyDropdown({
               type="button"
               onClick={() => copyToClipboard(item.text, item.key)}
               className={cn(
-                'group flex items-start gap-3 p-3 rounded-xl border text-left transition-all duration-150 cursor-pointer',
+                'group flex items-start gap-3 p-3 rounded-xl border text-left transition-colors duration-150 cursor-pointer',
                 isCopied
                   ? 'bg-success/10 border-success/40 ring-1 ring-success/20'
                   : 'bg-secondary/40 border-border/60 hover:bg-secondary hover:border-border'
@@ -108,7 +108,7 @@ export function QuickCopyDropdown({
                   'p-2 rounded-lg shrink-0 transition-colors',
                   isCopied
                     ? 'bg-success text-success-foreground'
-                    : 'bg-card text-muted-foreground group-hover:text-primary group-hover:bg-primary/10'
+                    : 'bg-muted text-muted-foreground group-hover:text-primary group-hover:bg-primary/10'
                 )}
               >
                 {isCopied ? <Check className="w-4 h-4" /> : <Icon className="w-4 h-4" />}

@@ -42,7 +42,7 @@ export function CronInputBar({
       {/* Main Input Card */}
       <div
         className={cn(
-          'relative rounded-2xl border transition-all duration-200 bg-card p-4 sm:p-5 shadow-sm',
+          'relative rounded-xl border transition-colors duration-200 bg-card p-4 sm:p-5 shadow-sm',
           validation.isValid
             ? 'border-border focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20'
             : 'border-destructive/60 bg-destructive/5 focus-within:border-destructive focus-within:ring-2 focus-within:ring-destructive/20'
@@ -50,7 +50,7 @@ export function CronInputBar({
       >
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <span className="text-xs font-semibold text-muted-foreground">
               Cron Expression
             </span>
             {validation.isValid ? (
@@ -79,7 +79,7 @@ export function CronInputBar({
               type="button"
               onClick={handleCopy}
               className={cn(
-                'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer shadow-xs',
+                'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors duration-200 cursor-pointer shadow-xs',
                 copied
                   ? 'bg-success text-success-foreground'
                   : 'bg-primary text-primary-foreground hover:opacity-90'
@@ -111,7 +111,7 @@ export function CronInputBar({
             spellCheck={false}
             autoCapitalize="off"
             autoCorrect="off"
-            className="w-full bg-secondary/60 rounded-xl px-4 py-3 sm:py-3.5 font-mono text-xl sm:text-2xl font-bold tracking-wider text-foreground placeholder:text-muted-foreground/40 border border-input focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-muted rounded-lg px-4 py-4 font-mono text-xl sm:text-2xl font-bold tracking-wider text-foreground placeholder:text-muted-foreground/40 border border-input focus:outline-none focus:border-primary transition-colors"
           />
         </div>
 
@@ -135,14 +135,14 @@ export function CronInputBar({
                   type="button"
                   onClick={() => onSelectField(key)}
                   className={cn(
-                    'flex flex-col items-center justify-center p-2 rounded-xl border text-center transition-all duration-150 cursor-pointer',
+                    'flex flex-col items-center justify-center p-2 rounded-xl border text-center transition-colors duration-150 cursor-pointer',
                     isSelected
                       ? 'border-primary ring-2 ring-primary/20 bg-accent'
                       : 'border-border/60 bg-secondary/40 hover:bg-secondary hover:border-border',
                     hasError && 'border-destructive bg-destructive/10'
                   )}
                 >
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <span className="text-xs font-semibold text-muted-foreground">
                     {meta.shortLabel}
                   </span>
                   <span

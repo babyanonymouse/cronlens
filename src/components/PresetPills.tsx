@@ -20,7 +20,7 @@ export function PresetPills({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+        <label className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5">
           <Zap className="w-3.5 h-3.5 text-warning" />
           Quick Presets
         </label>
@@ -39,7 +39,7 @@ export function PresetPills({
               type="button"
               onClick={() => onSelectPreset(preset)}
               className={cn(
-                'group relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer border',
+                'group relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors duration-150 cursor-pointer border',
                 isActive
                   ? 'bg-primary text-primary-foreground border-primary shadow-xs font-semibold'
                   : 'bg-card text-foreground border-border hover:bg-secondary hover:border-muted-foreground/30'
@@ -57,7 +57,7 @@ export function PresetPills({
                 className={cn(
                   'font-mono text-xs px-1.5 py-0.2 rounded transition-colors',
                   isActive
-                    ? 'bg-black/20 text-primary-foreground'
+                    ? 'bg-primary-foreground/10 text-primary-foreground'
                     : 'bg-muted text-muted-foreground group-hover:text-foreground'
                 )}
               >
